@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header.ejs') %>
+</head>
+<body>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="create-msg content">
+        <form action="/" method="POST">
+          <label for="text">Message Text:</label>
+          <input type="text" id="text" name="text" required>
+          <label for="user">Message User:</label>
+          <input type="text" id="user" name="user" required>
+          <button>Submit</button>
+        </form>
+      </div>
+
+      <%- include('./partials/footer.ejs') %>
+    
+</body>
+</html>

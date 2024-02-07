@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/header.ejs') %>
+
+<body>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="msgs content">
+        <h2>All Messages</h2>
+
+        <% if (msgs.length > 0) { %>
+            <% msgs.forEach(msg => { %>
+             <a class="single" >
+                <h3 class="text"><%= msg.text %></h3>
+                <p class="user"><%= msg.user %></p>
+             </a>
+            <% }) %>
+        <% } else { %>
+            <p>There are no messages to display</p>
+        <%} %>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>
