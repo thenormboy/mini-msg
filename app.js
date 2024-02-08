@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const msgRoutes = require('./routes/msgRoutes')
 
-const dbURI = 'mongodb://mongo:dgBDFACFhabDDf-G6gGbHf-E4c3EHg6B@mongodb.railway.internal:27017'
+const dbURI = 'mongodb+srv://test-user:testpass@cluster0.xw14m68.mongodb.net/mini-message?retryWrites=true&w=majority'
 mongoose.connect(dbURI)
     .then((result) => {
         console.log('connected to db')
