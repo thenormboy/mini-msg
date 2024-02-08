@@ -3,11 +3,13 @@ const mongoose = require('mongoose')
 
 const msgRoutes = require('./routes/msgRoutes')
 
+const port = process.env.PORT || 3000;
+
 const dbURI = 'mongodb+srv://test-user:testpass@cluster0.xw14m68.mongodb.net/mini-message?retryWrites=true&w=majority'
 mongoose.connect(dbURI)
     .then((result) => {
         console.log('connected to db')
-        app.listen(3000, "0.0.0.0")
+        app.listen(port, "0.0.0.0")
     })
     .catch((err) => console.log(err))
 
