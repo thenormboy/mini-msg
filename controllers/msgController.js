@@ -1,4 +1,4 @@
-const Message = require('..models/message')
+const Message = require('../models/message')
 
 const msg_main = (req, res) => {
     Message.find().sort({ createdAt: 1 })
@@ -16,11 +16,18 @@ const msg_create_get = (req, res) => {
 
 const msg_create_post = (req, res) => {
     const msg = new Message(req.body)
+    msg.added = Date.now()
     msg.save()
         .then(() => {
-            res.redirect('/index')
+            res.redirect('/messages')
         })
         .catch((err) => {
             console.log(err)
         })
+}
+
+module.exports = {
+    msg_main,
+    msg_create_get,
+    msg_create_post
 }
