@@ -7,7 +7,7 @@ const dbURI = 'mongodb+srv://test-user:testpass@cluster0.xw14m68.mongodb.net/min
 mongoose.connect(dbURI)
     .then((result) => {
         console.log('connected to db')
-        app.listen(3000)
+        app.listen(3000, "0.0.0.0")
     })
     .catch((err) => console.log(err))
 
